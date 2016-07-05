@@ -1,5 +1,15 @@
-.idea
-composer.lock
-phpunit.xml
-vendor/
-coverage
+#------- folders
+
+# composer
+/vendor
+
+# phpunit
+/coverage
+
+#phpstorm
+/.idea
+
+#------- files
+/composer.lock
+/phpunit.xml
+/php-cs-fixer
