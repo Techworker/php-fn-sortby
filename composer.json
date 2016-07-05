@@ -1,7 +1,7 @@
 {
   "name": "techworker/php-fn-sortby",
   "type": "library",
-  "description": "Small function that can be used to an array of any shape. PHP7 only.",
+  "description": "Small function that can be used to sort an array of any shape. PHP7 only.",
   "keywords": ["functional", "programming", "sorting"],
   "homepage": "http://www.techworker.de/fn",
   "license": "MIT",
