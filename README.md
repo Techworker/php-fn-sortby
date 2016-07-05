@@ -99,7 +99,7 @@ If you need some deeper login to retrieve a sort criterial, you can provide a fu
 
 Imagine you have an array of departments with its employees and an avg salary nested like this:
 
-```
+```php
 $departments = [
     'devops' => [
         'employees' => ['ben', 'peter', 'james', 'lisa', 'tequila'], // 5
@@ -126,7 +126,7 @@ The expected result should be something like this:
 
 Here is how it can work:
 
-``` php
+```php
 use function techworker\fn\sortBy;
 
 // I declare the callback in variables for better readability
@@ -152,7 +152,7 @@ If you provide a callback with two parameters, you can do the comparism by yours
 
 See the following example for a callback that uses 2 parameters:
  
-```
+```php
 use function techworker\fn\sortBy;
 
 // I declare the callback in variables for better readability
