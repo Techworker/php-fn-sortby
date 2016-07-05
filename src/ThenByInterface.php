@@ -1,6 +1,6 @@
 <?php
 
-namespace techworker\fn\sortby;
+namespace techworker\fn\sortBy;
 
 /**
  * Interface for returned instances from firstBy and sortByInterface. Just to
