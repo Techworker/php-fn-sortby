@@ -2,41 +2,39 @@
 
 namespace techworker\fn\sortby;
 
-// define method name for partials
-const SORT_BY = __NAMESPACE__ . '\sortBy';
+// this is part of another side project, please ignore it for now
+const FN_SORT_BY = __NAMESPACE__ . '\sortBy';
 
 /**
- * Returns an callable object that can either be used with u[a]sort directly or
- * extended via its SortByInterface method to add the next level sort order which then
- * returns an callable object that can either be used with u[a]sort directly or
- * extended via its SortByInterface method... and so on.
+ * Prepares a sort function to be used in combination with [usort](https://php.net/usort) or
+ * [uasort](https://php.net/uasort) to sort an array of any shape in a functional way.
  *
- * @param \Closure|mixed $comparator
- *        A comparison function (or sth. else) that can be understood by the
- *        decorator.
+ * @param callable|int|string $comparator
+ *        This can either be a string or a callable function that returns the value to sort by.
  * @param int $direction
- *        The direction in which the values should be sorted. Use the PHP
- *        constants SORT_ASC and SORT_DESC.
+ *        The direction to sort by. This can be one of the two predefined `SORT_*` constants in PHP:
+ *        [`\SORT_ASC`](http://php.net/manual/en/array.constants.php#constant.sort-asc) AND
+ *        [`\SORT_DESC`](http://php.net/manual/de/array.constants.php#constant.sort-desc).
  * @param callable $decorator
- *        A decorator function that can handle the input of $comparator and
- *        $direction to firstBy and sortByInterface and can transform it to a valid
- *        comparison function (if necessary). If you do not provide a
- *        decorator, the internal one of the fn-thenby package is used.
+ *        A decorator function that can handle the input of $comparator and $direction to sortBy
+ *        and ThenByInterface and can transform it to a valid comparison function (if necessary).
+ *        If you do not provide a decorator, the internal one of the php-fn-sortby package is used.
  *        The usage of this functionality should not be necessary in normal cases.
  *
  * @return ThenByInterface
  */
 function sortBy($comparator, int $direction = \SORT_ASC, callable $decorator = null) : ThenByInterface
 {
-    $decorator = $decorator ?: require(__DIR__ . '/decorator.php');
+    // use the given decorator or the builtin one
+    $decorator = $decorator ?: require(__DIR__ . '/Decorator.php');
 
-    // return a new class instance with a public sortByInterface method
+    // return a new class instance with a public ThenByInterface method
     return new class($decorator($comparator, $direction), $decorator)
         implements ThenByInterface
     {
         /**
          * The decorator that will be delegated to the next instance of the
-         * firstBy result and used to decorate the sortByInterface camparator.
+         * sortBy result and used to decorate the ThenByInterface comparator.
          *
          * @var \Closure
          */
@@ -53,7 +51,7 @@ function sortBy($comparator, int $direction = \SORT_ASC, callable $decorator = n
          * Constructor.
          *
          * @param \Closure $comparator The comparator function.
-         * @param \Closure $decorator The decorator for sortByInterface calls.
+         * @param \Closure $decorator The decorator for ThenByInterface calls.
          */
         public function __construct(\Closure $comparator, \Closure $decorator) {
             $this->comparator = $comparator;
