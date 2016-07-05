@@ -1,8 +1,8 @@
 {
   "name": "techworker/php-fn-sortby",
   "type": "library",
-  "description": "Samll function that can be used to sort any kind of data structure. PHP7 only.",
-  "keywords": ["functional", "programming", "sort"],
+  "description": "Small function that can be used to an array of any shape. PHP7 only.",
+  "keywords": ["functional", "programming", "sorting"],
   "homepage": "http://www.techworker.de/fn",
   "license": "MIT",
   "authors": [
@@ -16,7 +16,7 @@
     "php": ">=7"
   },
   "require-dev": {
-    "phpunit/phpunit": "^5.4"
+    "phpunit/phpunit": "~5.4"
   },
   "autoload": {
     "files": [
