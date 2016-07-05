@@ -20,7 +20,7 @@
   },
   "autoload": {
     "files": [
-      "src/sortBy.php"
+      "src/SortBy.php"
     ],
     "psr-4": {
       "techworker\\fn\\sortby\\": "src/"

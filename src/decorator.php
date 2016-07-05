@@ -1,6 +1,6 @@
 <?php
 
-namespace techworker\fn\sortby;
+namespace techworker\fn\sortBy;
 
 /*
  * A decorator function to transform a comparator of any type to a comparator usable in

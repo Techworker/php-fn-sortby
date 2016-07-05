@@ -1,6 +1,6 @@
 <?php
 
-namespace techworker\fn\sortby;
+namespace techworker\fn\sortBy;
 
 // this is part of another side project, please ignore it for now
 const FN_SORT_BY = __NAMESPACE__ . '\sortBy';
@@ -21,7 +21,7 @@ const FN_SORT_BY = __NAMESPACE__ . '\sortBy';
  *        If you do not provide a decorator, the internal one of the php-fn-sortby package is used.
  *        The usage of this functionality should not be necessary in normal cases.
  *
- * @return ThenByInterface
+ * @return ThenByInterface|callable
  */
 function sortBy($comparator, int $direction = \SORT_ASC, callable $decorator = null) : ThenByInterface
 {

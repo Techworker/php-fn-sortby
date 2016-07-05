@@ -9,5 +9,11 @@ namespace techworker\fn\sortBy;
  */
 interface ThenByInterface
 {
+    /**
+     * @param $comparator
+     * @param int $direction
+     *
+     * @return ThenByInterface|callable
+     */
     public function thenBy($comparator, int $direction = SORT_ASC) : ThenByInterface;
 }
