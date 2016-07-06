@@ -23,12 +23,12 @@
       "src/SortBy.php"
     ],
     "psr-4": {
-      "techworker\\fn\\sortby\\": "src/"
+      "techworker\\fn\\sortBy\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "techworker\\fn\\sortby\\tests\\": "tests/"
+      "techworker\\fn\\sortBy\\tests\\": "tests/"
     }
   },
   "config": {
